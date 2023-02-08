@@ -1,10 +1,18 @@
-{% set colorMap = {
-    'green': 'bg-bts-green-500 hover:bg-bts-green-700 focus:ring-bts-green-500 focus:ring-offset-bts-green-400',
-    'red': 'bg-bts-red-500 hover:bg-bts-red-700 focus:ring-bts-red-500 focus:ring-offset-bts-red-400',
+{% set icons = {
+    'search': 'icons/_search_lordIcon.html.twig',
+    'ad': 'icons/_folder_lordIcon.html.twig',
+    'setup': 'icons/_edit_lordIcon.html.twig',
+    'gift': 'icons/_recycle_lordIcon.html.twig'
 } %}
 
-{% set colors = colorMap[color|default('green')] %}
+{% set iconToDisplay = icons[icon] %}
 
-<a href="{{ linkPath }}" class="block py-4 px-6 {{ colors }} text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full">
-    {{ linkName }}
+
+<a href="{{ linkPath }}" class="relative block rounded-md border border-neutral-200 p-8 bg-gray-100 rounded-xl flex flex-col justify-center shadow-lg duration-300 hover:bg-white hover:shadow-2xl flex flex-col justify-around items-center h-full">
+    <span>
+        {{ include(iconToDisplay) }}
+    </span>
+    <p class="text-2xl font-bold text-gray-500 text-center flex-1">
+        {{ linkName }}
+    </p>
 </a>
