@@ -44,7 +44,7 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'attr' => [
                     'autocomplete' => 'new-password',
-                    'placeholder' => "marine.martin@gmail.com"
+                    'placeholder' => "mot de passe"
                     ],
                 'constraints' => [
                     new NotBlank([
